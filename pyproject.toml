@@ -1,0 +1,9 @@
+[tool.poetry]
+name = "ModelToProduction"
+version = "0.1.0"
+description = "Task 1 for course DLBDSMTP01 B.Sc. Data Science"
+authors = ["Manuel Vogt <vogt.manuel@proton.me>"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

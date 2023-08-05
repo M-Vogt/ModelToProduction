@@ -4,6 +4,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def hello_world():
     return "<p>Hello, World!</p>"
@@ -20,11 +21,12 @@ def predict(data: any):
     model_filename = "trained_model.pkl"
     model = load_model(model_filename)
 
-    names = ['Temperature', 'Humidity', 'Sound Volume']
+    names = ["Temperature", "Humidity", "Sound Volume"]
 
-    features = [data[name]['value'] for name in names]
+    features = [data[name]["value"] for name in names]
     predicted_label = model.predict([features])[0]
     return predicted_label
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     app.run(debug=True)
