@@ -21,7 +21,7 @@ def generate_sensor_data():
 
     # Calculate anomaly probability based on the sum of values
     anomaly_probability = np.sum(values) / (np.sum(max_vals) * len(names))
-    anomaly_probability = min(anomaly_probability, 0.1)  # Limit the anomaly probability
+    anomaly_probability = min(anomaly_probability, 0.2)  # Limit the anomaly probability
     label = np.random.choice(
         ["normal", "anomaly"], p=[1 - anomaly_probability, anomaly_probability]
     )

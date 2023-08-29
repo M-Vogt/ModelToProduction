@@ -4,6 +4,26 @@ version = "0.1.0"
 description = "Task 1 for course DLBDSMTP01 B.Sc. Data Science"
 authors = ["Manuel Vogt <vogt.manuel@proton.me>"]
 
+[tool.poetry.dependencies]
+python = ">=3.10, <=3.11.4"
+numpy = "^1.25.2"
+scikit-learn = "^1.3.0"
+flask = "^2.3.3"
+requests = "^2.31.0"
+
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.22.0"
+black = "^23.7.0"
+jupyter = "^1.0.0"
+
+[tool.poe.tasks]
+sim = "python3.11 sensor/simulate_sensors_stream.py"
+serve = "python3.11 server/main.py"
+gen_data = "python3.11 model/generate_artificial_dataset.py"
+train_model = "python3.11 model/train_model.py"
+format = "black ."
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+ 
